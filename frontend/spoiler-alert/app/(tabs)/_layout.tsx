@@ -6,8 +6,9 @@ const TabsLayout = () => {
   return (
     <Tabs
         screenOptions={{
-            tabBarActiveTintColor: "green",
-            tabBarInactiveTintColor: "red"
+            tabBarActiveTintColor: "red",
+            tabBarInactiveTintColor: "black",
+            headerShown: false
         }}
     >
         <Tabs.Screen
@@ -40,9 +41,9 @@ const TabsLayout = () => {
         />
 
         <Tabs.Screen
-            name = "profile"
+            name = "settings"
             options = {{
-                title: "Profile",
+                title: "Settings",
                 tabBarIcon: () => (
                     <Ionicons name= "person-outline"/>
                 )   
