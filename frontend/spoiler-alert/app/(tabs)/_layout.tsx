@@ -1,35 +1,57 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Ionicons } from "@expo/vector-icons"
+import { Tabs } from 'expo-router'
+import React from 'react'
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+const TabsLayout = () => {
   return (
     <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+        screenOptions={{
+            tabBarActiveTintColor: "red",
+            tabBarInactiveTintColor: "black",
+            headerShown: false
         }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+    >
+        <Tabs.Screen
+            name = "index"
+            options = {{
+                title: "Home Page",
+                tabBarIcon: () => (
+                    <Ionicons name="home-outline"/>
+                )   
+            }}
+        />
+        <Tabs.Screen
+            name = "fridge"
+            options = {{
+                title: "My Fridge",
+                tabBarIcon: () => (
+                    <Ionicons name="restaurant-outline"/>
+                )   
+            }}
+        />
+
+        <Tabs.Screen
+            name = "recipes"
+            options = {{
+                title: "My Recipes",
+                tabBarIcon: () => (
+                    <Ionicons name="heart-circle-outline"/>
+                )   
+            }}
+        />
+
+        <Tabs.Screen
+            name = "settings"
+            options = {{
+                title: "Settings",
+                tabBarIcon: () => (
+                    <Ionicons name= "person-outline"/>
+                )   
+            }}
+        />
+
     </Tabs>
-  );
+  )
 }
+
+export default TabsLayout
