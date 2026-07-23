@@ -14,6 +14,9 @@ load_dotenv(dotenv_path=env_path, override=True)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("identify_product")
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger("identify_product")
+
 router = APIRouter(
     prefix="/food",
     tags=["Identify Product"]
